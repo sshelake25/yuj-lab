@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { MainContainerComponent } from './main-container/main-container.component';
 
 @NgModule(
   {
@@ -12,7 +13,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    SidebarComponent
+    SidebarComponent,
+    MainContainerComponent
   ],
   imports: [
     BrowserModule
