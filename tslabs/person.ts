@@ -1,8 +1,8 @@
 
 class Person {
-    firstName: any;
-    lastName: any;
-    address: any
+    private firstName: any;
+    public lastName: any;
+    protected address: any
 
     constructor(fname: any, lname: any, addr: any) {
         this.firstName = fname;
@@ -10,7 +10,7 @@ class Person {
         this.address = addr;
     }
 
-    getName() {
+    protected getName() {
         return `${this.firstName} - ${this.lastName}`;
     }
 
@@ -36,6 +36,10 @@ class Student extends Person {
         this.marks = mark;
         this.attendace = att;
 
+    }
+
+    test() {
+        console.log(this.address);
     }
 
     takeExam() {
