@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-container.component.css']
 })
 export class MainContainerComponent implements OnInit {
-
+  personAdress = [
+    'Pune', '50043', 'IND'
+  ]
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  getDetails(data: any) {
+    console.log(JSON.stringify(data));
   }
 
 }

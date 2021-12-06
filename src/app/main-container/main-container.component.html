@@ -1,1 +1,7 @@
 <p>main-container works!</p>
+
+<yuj-profile 
+    [personName]="'hello world'" 
+    [addressDetails]="personAdress"
+    (loginDetails)="getDetails($event)">
+</yuj-profile>
