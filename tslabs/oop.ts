@@ -2,20 +2,27 @@ interface Human {
     firstName: string;
     lastName: string;
     name?: Function;
-    isLate?(time: Date): Function;
+    isLate(time: Date): boolean;
 }
 
 class Person_YUJ implements Human {
+    balance : number = 12_323_213_434_546;
+
     constructor(public firstName: any, public lastName: any) {
     }
 
-    public name() {
+    public name(): string {
         return `${this.firstName} ${this.lastName}`;
     }
 
     protected whoAreYou() {
         return `Hi i'm ${this.name()}`;
     }
+
+    isLate(para: Date): boolean {
+        return true;
+    }
+
 }
 
 class Student_YUJ extends Person_YUJ {
