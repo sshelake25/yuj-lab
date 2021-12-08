@@ -17,25 +17,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     'dsd'
   ];
 
-  public personDetails = [
-    {
-      name: 'foo',
-      address: 'ppp',
-      'age limit': 40
-    },
-    {
-      name: 'bar',
-      address: 'sas',
-      'age limit': 20
-    },
-    {
-      name: 'barfoo',
-      address: 'asas',
-      'age limit': 25
-    }
-  ]; // personDetails[2].name
-
-
+ 
 
   constructor() { }
 

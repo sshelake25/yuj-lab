@@ -7,12 +7,12 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  @Input() personName!: string;
-  @Input() addressDetails!: Array<string>;
+  @Input() productConfigs!:any;
+
 
   @Output() loginDetails = new EventEmitter(); //
 
-  profileUrl = './../../assets/images/profile.jpg';
+  profileUrl = './../../assets/images/product.jpg';
 
   isDisabled: boolean = false;
 

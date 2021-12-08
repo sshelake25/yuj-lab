@@ -5,14 +5,7 @@
   <a href="#about">About</a>
 </div>
 
-<ul>
-  <li *ngFor="let person of personDetails">
-    <!-- {{person | json}} -->
-    <h3>{{person.name}} - {{person.address}} - {{person['age limit']}} </h3>
 
-    <yuj-profile [personName]="person.name"></yuj-profile>
-  </li>
-</ul>
 
 <!-- 
 <h2>

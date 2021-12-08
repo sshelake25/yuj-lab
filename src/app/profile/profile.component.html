@@ -1,8 +1,18 @@
-<p>profile works!</p>
-<h6>parent component header {{personName}}</h6>
-<h5>{{addressDetails}}</h5>
+<span>profile</span>
 
-<img [src]="profileUrl"
- title="hello profile" alt="profile" width="50" height="50">
+<div class="card" style="width: 18rem;">
+    <img [src]="profileUrl" class="card-img-top" alt="...">
 
- <button (click)="sayHello()">Say hello</button>
+    <div class="card-body">
+        <h5 class="card-title">{{productConfigs.name}}</h5>
+        <p class="card-text">{{productConfigs.shotDescription}}Some quick example text to build on the card title and
+            make up the bulk of the card's content.</p>
+
+        <ul>
+            <li *ngFor="let feature of productConfigs.productFeatures">
+                {{feature}}
+            </li>
+        </ul>
+        <a href="#" class="btn btn-primary">{{productConfigs.linkTitle}}</a>
+    </div>
+</div>
