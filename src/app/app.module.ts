@@ -52,7 +52,11 @@ const appRoutes: Routes = [
     SidebarComponent,
     MainContainerComponent,
     ProfileComponent,
-    ListProfileComponent
+    ListProfileComponent,
+    DashboardComponent,
+    LoginComponent,
+    RegistrationComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
