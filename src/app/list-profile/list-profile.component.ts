@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ProductService } from '../services/product.service';
+import { ProfileService } from '../services/profile.service';
 
 @Component({
   selector: 'yuj-list-profile',
@@ -27,9 +30,22 @@ export class ListProfileComponent implements OnInit {
     },
   ];
 
-  constructor() { }
+  constructor(
+    private productSrv: ProductService,
+    private profileSrv: ProfileService,
+    private route: ActivatedRoute) {
+
+  }
 
   ngOnInit(): void {
+    let pprod = this.productSrv.getProductList();
+    console.log(pprod)
+
+    console.log(this.profileSrv.name)
+
+    
+    console.log(this.route)
+
   }
 
 }
