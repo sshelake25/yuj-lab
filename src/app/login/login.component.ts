@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import { ConfigService } from '../services/config.service';
 
 @Component({
   selector: 'yuj-login',
@@ -10,7 +11,7 @@ export class LoginComponent implements OnInit {
 
   @Input() loginId = 'dsdsad';
 
-  constructor() {
+  constructor(private config: ConfigService) {
     console.log(`new - data is ${this.data}`);
   }
 

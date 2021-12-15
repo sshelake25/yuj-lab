@@ -1,0 +1,24 @@
+{
+    "brainlife": [
+        {
+            "type": "error",
+            "msg": "here is my error message"
+        },
+        {
+            "type": "danger",
+            "msg": "here is my error message"
+        },
+        {
+            "type": "info",
+            "msg": "here is my info message"
+        },
+        {
+            "type": "warning",
+            "msg": "here is my warning message"
+        },
+        {
+            "type": "success",
+            "msg": "here is my warning message"
+        }
+    ]
+}

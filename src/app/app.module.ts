@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
-
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
@@ -29,20 +29,18 @@ const appRoutes: Routes = [
     component: LoginComponent
   },
   {
-    path:'register',
+    path: 'register',
     component: RegistrationComponent
   },
   {
-    path:'',
-    component:HomeComponent
+    path: '',
+    component: HomeComponent
   },
   {
-    path:'**',
+    path: '**',
     component: NotfoundComponent
   }
-
-
-]
+];
 
 
 @NgModule({
@@ -56,15 +54,16 @@ const appRoutes: Routes = [
     ListProfileComponent,
     DashboardComponent,
     LoginComponent,
-    RegistrationComponent,
+    //RegistrationComponent,
     HomeComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(
       appRoutes,
-     // { enableTracing: true } // <-- debugging purposes only
-    )
+      // { enableTracing: true } // <-- debugging purposes only
+    ),
+    HttpClientModule
   ],
   providers: [
     ProductService
