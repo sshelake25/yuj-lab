@@ -17,6 +17,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { HomeComponent } from './home/home.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { ProductService } from './services/product.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 const appRoutes: Routes = [
@@ -54,7 +55,7 @@ const appRoutes: Routes = [
     ListProfileComponent,
     DashboardComponent,
     LoginComponent,
-    //RegistrationComponent,
+    RegistrationComponent,
     HomeComponent
   ],
   imports: [
@@ -63,7 +64,9 @@ const appRoutes: Routes = [
       appRoutes,
       // { enableTracing: true } // <-- debugging purposes only
     ),
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule, //for reactive form to use
+    FormsModule //tempdrive form
   ],
   providers: [
     ProductService

@@ -28,7 +28,7 @@ export class ListProfileComponent implements OnInit {
 
     this.productProfiles = this.productSrv.getProductProfiles();
 
-
+    
     this.configSrv.getConfigs().subscribe((data) => {
       console.log(data);
     });
