@@ -1,0 +1,30 @@
+<p>support-ticket works!</p>
+
+
+
+<!-- <inputname="foo"ngModel> -->
+
+
+<form novalidate #supportF="ngForm">
+    <pre>{{supportF.value | json}}</pre>
+
+    <div class="form-group">
+        <label>Ticket Title</label>
+        <input type="text" class="form-control" name="ttitle" ngModel>
+    </div>
+
+    <div class="form-group">
+        <label>Ticket Description</label>
+        <textarea class="form-control" name="tdesc" ngModel></textarea>
+    </div>
+
+    <div class="form-group">
+        <label>Ticket Severity/Priority </label>
+        <select class="form-control" name="tseverity" ngModel>
+            <option value=""></option>
+            <option *ngFor="let severity of severites" [value]="severity">
+                {{severity}}
+            </option>
+        </select>
+    </div>
+</form>

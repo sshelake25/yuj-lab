@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  SERVICE_URL: {
+    DEFAULT_URL: 'http://localhost:5000/profiles'
+  },
 };
 
 /*

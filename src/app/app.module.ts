@@ -18,6 +18,7 @@ import { HomeComponent } from './home/home.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { ProductService } from './services/product.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SupportTicketComponent } from './support-ticket/support-ticket.component';
 
 
 const appRoutes: Routes = [
@@ -32,6 +33,10 @@ const appRoutes: Routes = [
   {
     path: 'register',
     component: RegistrationComponent
+  },
+  {
+    path: 'ticket',
+    component: SupportTicketComponent
   },
   {
     path: '',
@@ -56,7 +61,8 @@ const appRoutes: Routes = [
     DashboardComponent,
     LoginComponent,
     RegistrationComponent,
-    HomeComponent
+    HomeComponent,
+    SupportTicketComponent
   ],
   imports: [
     BrowserModule,
