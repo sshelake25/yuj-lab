@@ -8,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class FooterComponent implements OnInit {
   pageTitle = 'Welcom to angular sessions';
 
+  currentYear = new Date();
+  compyName: string = 'YUJ Designs.com';
+
+
   personList = [
     {
       name:'surekha shelake',
@@ -24,6 +28,7 @@ export class FooterComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    //alert(this.currentYear)
   }
 
 

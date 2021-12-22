@@ -19,6 +19,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { ProductService } from './services/product.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SupportTicketComponent } from './support-ticket/support-ticket.component';
+import { PriceComponent } from './price/price.component';
 
 
 const appRoutes: Routes = [
@@ -62,7 +63,8 @@ const appRoutes: Routes = [
     LoginComponent,
     RegistrationComponent,
     HomeComponent,
-    SupportTicketComponent
+    SupportTicketComponent,
+    PriceComponent
   ],
   imports: [
     BrowserModule,
