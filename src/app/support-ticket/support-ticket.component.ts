@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'yuj-support-ticket',
@@ -6,6 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./support-ticket.component.css']
 })
 export class SupportTicketComponent implements OnInit {
+  @ViewChild("supportF") supportForm: any; //one to get access all value or control inside template 
+  myName: any
+
+  // public supportModule = { // only value 
+  //   ttitle: '',
+  //   temail: '',
+  //   tdesc: '',
+  //   tseverity: ''
+  // };
+
   severites = [
     // {
     //   title: 'Hight',
@@ -21,4 +31,8 @@ export class SupportTicketComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  submitMyform() {
+    console.log(this.supportForm.value)
+    //console.log(this.supportModule)
+  }
 }

@@ -2,24 +2,35 @@
 
 
 
-<!-- <inputname="foo"ngModel> -->
-
-
 <form novalidate #supportF="ngForm">
     <pre>{{supportF.value | json}}</pre>
-
+    <!-- {{supportF.controls['ttitle'].value}} -->
     <div class="form-group">
         <label>Ticket Title</label>
-        <input type="text" class="form-control" name="ttitle" ngModel>
+        <!-- [(ngModel)]="supportModule.ttitle" -->
+        <input type="text" class="form-control" name="ttitle" [(ngModel)]="myName" #ttitle="ngModel" required>
+
+        <div class="form-group validation" *ngIf="(ttitle.dirty || ttitle.touched)  && ttitle.invalid">
+            Title is required
+        </div>
     </div>
 
     <div class="form-group">
+        <label>Ticket Email</label>
+        <!-- [(ngModel)]="supportModule.temail" -->
+        <input type="text" class="form-control" name="temail" ngModel required>
+    </div>
+
+
+    <div class="form-group">
         <label>Ticket Description</label>
+        <!-- [(ngModel)]="supportModule.tdesc" -->
         <textarea class="form-control" name="tdesc" ngModel></textarea>
     </div>
 
     <div class="form-group">
         <label>Ticket Severity/Priority </label>
+        <!-- [(ngModel)]="supportModule.tseverity" -->
         <select class="form-control" name="tseverity" ngModel>
             <option value=""></option>
             <option *ngFor="let severity of severites" [value]="severity">
@@ -27,4 +38,12 @@
             </option>
         </select>
     </div>
+
+    <div>
+        <br>
+        <br>
+        <button (click)="submitMyform()" type="submit" class="btn btn-primary" [disabled]="!supportF.valid">Submit
+        </button>
+    </div>
+
 </form>
