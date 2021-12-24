@@ -20,6 +20,7 @@ import { ProductService } from './services/product.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SupportTicketComponent } from './support-ticket/support-ticket.component';
 import { PriceComponent } from './price/price.component';
+import { UsageComponent } from './usage/usage.component';
 
 
 const appRoutes: Routes = [
@@ -64,7 +65,8 @@ const appRoutes: Routes = [
     RegistrationComponent,
     HomeComponent,
     SupportTicketComponent,
-    PriceComponent
+    PriceComponent,
+    UsageComponent
   ],
   imports: [
     BrowserModule,

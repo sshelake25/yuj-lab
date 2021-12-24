@@ -1,0 +1,17 @@
+<div class="card border-primary mb-3" style="max-width: 18rem;">
+    <div class="card-header">Directive usage</div>
+    <div class="card-body text-primary">
+        <ul>
+            <span [ngStyle]="{ color: 'red'}" *ngIf="true">
+                I am alive
+            </span>
+            <li [ngClass]="{ 'active':  currentIndex === 2,
+                             'inactive': currentIndex === 4}" *ngFor="let person of people; 
+                  let currentIndex= index">
+                {{currentIndex + 1}} - I am from
+                {{person.country}} and name is
+                {{ person.name }}
+            </li>
+        </ul>
+    </div>
+</div>
