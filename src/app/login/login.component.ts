@@ -39,6 +39,19 @@ export class LoginComponent implements OnInit {
 
   onSubmitLoginForm() {
     console.log(this.loginForm.value)
+   
+    //JSON.parse 
+
+    localStorage.setItem('loginInfo',  JSON.stringify(this.loginForm.value))
+    
+    localStorage.setItem('fillterSession',  JSON.stringify({
+      person: 'sshelake'
+    }))
+    
+    
+
+    
+    // localStorage.clear()
     // this.loginService.loginUser(this.loginForm.value).subcribe(
     //   (repose) => {
 

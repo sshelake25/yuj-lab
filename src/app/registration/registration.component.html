@@ -1,5 +1,6 @@
 <div>
     <b>User Registation form</b>
+    {{myLoginData | json}}
 </div>
 <form novalidate [formGroup]="registationForm">
     <pre>{{registationForm.value | json}}</pre>

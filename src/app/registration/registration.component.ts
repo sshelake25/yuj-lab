@@ -9,6 +9,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class RegistrationComponent implements OnInit {
   langs: string[] = ["English", "French", "German"];
   registationForm: any;
+  myLoginData: any;
 
   // firstName: FormControl;
   // lastName: FormControl;
@@ -19,6 +20,10 @@ export class RegistrationComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    localStorage.removeItem('fillterSession');
+    this.myLoginData = JSON.parse(sessionStorage.getItem('profile') || " ")
+
+
 
     this.registationForm = new FormGroup({
       firstName: new FormControl("YUJ"),
@@ -34,7 +39,7 @@ export class RegistrationComponent implements OnInit {
       // })
     });
 
-     console.log(this.registationForm.controls)
+    console.log(this.registationForm.controls)
 
   }
 
