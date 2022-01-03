@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import {MatDialog} from '@angular/material/dialog';
+import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({
   selector: 'yuj-support-ticket',
@@ -27,7 +29,8 @@ export class SupportTicketComponent implements OnInit {
     'Low',
     'Not important'
   ]
-  constructor() {
+
+  constructor(public dialog: MatDialog) {
     this.myLoginData = JSON.parse(localStorage.getItem('loginInfo') || '');
   }
 
@@ -40,5 +43,13 @@ export class SupportTicketComponent implements OnInit {
 
     console.log(this.supportForm.value)
     //console.log(this.supportModule)
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(DialogComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 }

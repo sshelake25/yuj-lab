@@ -2,6 +2,10 @@
 
 {{myLoginData | json}}
 
+<!-- <yuj-dialog></yuj-dialog> -->
+
+<button mat-button (click)="openDialog()">Open dialog</button>
+
 
 <form novalidate #supportF="ngForm">
     <pre>{{supportF.value | json}}</pre>

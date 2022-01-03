@@ -23,7 +23,10 @@ import { PriceComponent } from './price/price.component';
 import { UsageComponent } from './usage/usage.component';
 import { RxUsageComponent } from './rx-usage/rx-usage.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSliderModule } from '@angular/material/slider';
+import { DialogComponent } from './dialog/dialog.component';
+
+import { MaterialModule } from './meterial.modules';
+
 
 const appRoutes: Routes = [
   {
@@ -69,7 +72,8 @@ const appRoutes: Routes = [
     SupportTicketComponent,
     PriceComponent,
     UsageComponent,
-    RxUsageComponent
+    RxUsageComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -81,7 +85,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule, //for reactive form to use
     FormsModule,
     BrowserAnimationsModule, //tempdrive form,
-    MatSliderModule
+    MaterialModule,
   ],
   providers: [
     ProductService
