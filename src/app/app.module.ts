@@ -26,6 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogComponent } from './dialog/dialog.component';
 
 import { MaterialModule } from './meterial.modules';
+import { HighlightDirective } from './directives/highlight.directive';
 
 
 const appRoutes: Routes = [
@@ -73,7 +74,8 @@ const appRoutes: Routes = [
     PriceComponent,
     UsageComponent,
     RxUsageComponent,
-    DialogComponent
+    DialogComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
