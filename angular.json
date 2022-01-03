@@ -75,7 +75,8 @@
               "browserTarget": "yuj-dashboard:build:production"
             },
             "development": {
-              "browserTarget": "yuj-dashboard:build:development"
+              "browserTarget": "yuj-dashboard:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

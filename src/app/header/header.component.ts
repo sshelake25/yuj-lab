@@ -1,4 +1,14 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ConfigService } from '../services/config.service';
+
+export interface Location {
+  name: string;
+  shortDes: string;
+}
+
+// export interface AllLocations {
+//   locations: Location[];
+// }
 
 @Component(
   {
@@ -10,6 +20,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 
 export class HeaderComponent implements OnInit, OnDestroy {
   public myname = 'surekha shelake';
+  public locations!: Location;
 
   public personList = [
     'ab',
@@ -17,11 +28,17 @@ export class HeaderComponent implements OnInit, OnDestroy {
     'dsd'
   ];
 
- 
 
-  constructor() { }
+
+  constructor(private configSrv: ConfigService) { }
 
   ngOnInit() {
+    this.configSrv
+      .getLocations()
+      .subscribe(
+        (locations: any) =>
+          this.locations = locations
+      )
   }
 
   ngOnDestroy() {

@@ -25,4 +25,8 @@ export class ConfigService {
     return products[0];
   }
 
+  getLocations() {
+    return this.http.get('/api/location');
+  }
+
 }

@@ -21,14 +21,17 @@ export class ListProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // let pprod = this.productSrv.getProductList();
-    // console.log(pprod)
-    // console.log(this.profileSrv.name)
-    // console.log(this.route)
+    this.productSrv
+      .getProductList()
+      .subscribe(data => {
+        console.log(`data comming from node backend`);
+        console.log(data)
+      })
+
 
     this.productProfiles = this.productSrv.getProductProfiles();
 
-    
+
     this.configSrv.getConfigs().subscribe((data) => {
       console.log(data);
     });
