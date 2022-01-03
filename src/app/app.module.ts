@@ -22,7 +22,8 @@ import { SupportTicketComponent } from './support-ticket/support-ticket.componen
 import { PriceComponent } from './price/price.component';
 import { UsageComponent } from './usage/usage.component';
 import { RxUsageComponent } from './rx-usage/rx-usage.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
 
 const appRoutes: Routes = [
   {
@@ -78,7 +79,9 @@ const appRoutes: Routes = [
     ),
     HttpClientModule,
     ReactiveFormsModule, //for reactive form to use
-    FormsModule //tempdrive form
+    FormsModule,
+    BrowserAnimationsModule, //tempdrive form,
+    MatSliderModule
   ],
   providers: [
     ProductService
