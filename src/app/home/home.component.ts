@@ -6,6 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  readTime: string = '';
+
+  myConfig = {
+    wordsPerMinute: 100,
+  };
 
   imageUrl = '../../assets/images/product.jpg';
   hColor = 'red';
@@ -15,6 +20,10 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  calculatedTime(time: string) {
+    this.readTime = time;
   }
 
 }

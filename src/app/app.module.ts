@@ -28,6 +28,7 @@ import { DialogComponent } from './dialog/dialog.component';
 import { MaterialModule } from './meterial.modules';
 import { HighlightDirective } from './directives/highlight.directive';
 import { UnlessDirective } from './directives/unless.directive';
+import { ReadTimeDirective } from './directives/read-time.directive';
 
 
 const appRoutes: Routes = [
@@ -77,7 +78,8 @@ const appRoutes: Routes = [
     RxUsageComponent,
     DialogComponent,
     HighlightDirective,
-    UnlessDirective
+    UnlessDirective,
+    ReadTimeDirective
   ],
   imports: [
     BrowserModule,
