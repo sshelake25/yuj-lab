@@ -15,6 +15,9 @@ export class HomeComponent implements OnInit {
   imageUrl = '../../assets/images/product.jpg';
   hColor = 'red';
 
+
+  myLongSting = "Silent sir say desire fat him letter. Whatever settling goodness too and honoured she building answered her. Strongly thoughts remember mr to do"
+
   // currentUsrRole= (user.i)
 
   constructor() { }

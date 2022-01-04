@@ -30,6 +30,9 @@ import { HighlightDirective } from './directives/highlight.directive';
 import { UnlessDirective } from './directives/unless.directive';
 import { ReadTimeDirective } from './directives/read-time.directive';
 import { ScrollToDirective } from './directives/scroll-to.directive';
+import { DemoPipe } from './pipes/demo.pipe';
+import { AvatarPipe } from './pipes/avatar.pipe';
+import { TruncatePipe } from './pipes/truncate.pipe';
 
 
 const appRoutes: Routes = [
@@ -81,7 +84,10 @@ const appRoutes: Routes = [
     HighlightDirective,
     UnlessDirective,
     ReadTimeDirective,
-    ScrollToDirective
+    ScrollToDirective,
+    DemoPipe,
+    AvatarPipe,
+    TruncatePipe
   ],
   imports: [
     BrowserModule,

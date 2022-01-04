@@ -1,7 +1,14 @@
 <p>home works!</p>
 
+<img [src]="'' | avatar:'../../assets/images/profile.jpg'" width="50" height="50"><br>
+we have added above image by pipe
+<br>
+<div>
+    {{myLongSting | truncate}}
+</div>
+<br><br>
 <p [yujHighlight]="hColor" title="dsdsa">We are using highligh direcive pls mouse over</p>
-
+<br>
 
 
 <div *ngIf="false">
@@ -16,10 +23,7 @@
 </div>
 
 
-<div class="content" role="main" id="mainContent" 
-    yujReadTime 
-    [configuration]="myConfig"
-    [color]="'yellow'"
+<div class="content" role="main" id="mainContent" yujReadTime [configuration]="myConfig" [color]="'yellow'"
     (readTimeCalculated)="calculatedTime($event)">
     <h4>Read time = {{ readTime }}</h4>
     <p class="text-content">
