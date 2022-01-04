@@ -10,6 +10,8 @@ export class HomeComponent implements OnInit {
   imageUrl = '../../assets/images/product.jpg';
   hColor = 'red';
 
+  // currentUsrRole= (user.i)
+
   constructor() { }
 
   ngOnInit(): void {
