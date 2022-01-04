@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  imageUrl = '../../assets/images/product.jpg';
+  hColor = 'red';
+
   constructor() { }
 
   ngOnInit(): void {
