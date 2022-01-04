@@ -29,6 +29,7 @@ import { MaterialModule } from './meterial.modules';
 import { HighlightDirective } from './directives/highlight.directive';
 import { UnlessDirective } from './directives/unless.directive';
 import { ReadTimeDirective } from './directives/read-time.directive';
+import { ScrollToDirective } from './directives/scroll-to.directive';
 
 
 const appRoutes: Routes = [
@@ -79,7 +80,8 @@ const appRoutes: Routes = [
     DialogComponent,
     HighlightDirective,
     UnlessDirective,
-    ReadTimeDirective
+    ReadTimeDirective,
+    ScrollToDirective
   ],
   imports: [
     BrowserModule,
