@@ -12,6 +12,7 @@ export class AvatarPipe implements PipeTransform {
     } else {
       image = args[0];
     }
+    console.log('insde pure piple - avatar')
     return image;
   }
 
