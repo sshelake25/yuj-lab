@@ -33,6 +33,7 @@ import { ScrollToDirective } from './directives/scroll-to.directive';
 import { DemoPipe } from './pipes/demo.pipe';
 import { AvatarPipe } from './pipes/avatar.pipe';
 import { TruncatePipe } from './pipes/truncate.pipe';
+import { NotificationManagerComponent } from './notification-manager/notification-manager.component';
 
 
 const appRoutes: Routes = [
@@ -87,7 +88,8 @@ const appRoutes: Routes = [
     ScrollToDirective,
     DemoPipe,
     AvatarPipe,
-    TruncatePipe
+    TruncatePipe,
+    NotificationManagerComponent
   ],
   imports: [
     BrowserModule,

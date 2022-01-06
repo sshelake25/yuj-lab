@@ -1,5 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ConfigService } from '../services/config.service';
+import { NotificationsServiceService } from '../services/notifications-service.service';
 
 export interface Location {
   name: string;
@@ -21,6 +23,8 @@ export interface Location {
 export class HeaderComponent implements OnInit, OnDestroy {
   public myname = 'surekha shelake';
   public locations!: Location;
+ 
+  notificationHoder$: Observable<number>;
 
   public personList = [
     'ab',
@@ -30,9 +34,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
 
 
-  constructor(private configSrv: ConfigService) { }
+  constructor(private configSrv: ConfigService,
+    private notiSrv: NotificationsServiceService) { }
 
   ngOnInit() {
+    
+    this.notificationHoder$ = this.notiSrv.countHolder$;
+
     this.configSrv
       .getLocations()
       .subscribe(

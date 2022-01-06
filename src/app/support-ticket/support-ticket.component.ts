@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
+import { NotificationsServiceService } from '../services/notifications-service.service';
 
 @Component({
   selector: 'yuj-support-ticket',
@@ -29,12 +30,15 @@ export class SupportTicketComponent implements OnInit {
     'Low',
     'Not important'
   ]
+  notificationHoder$: any;
 
-  constructor(public dialog: MatDialog) {
+  constructor(public dialog: MatDialog, 
+    private notiSrv: NotificationsServiceService) {
     this.myLoginData = JSON.parse(localStorage.getItem('loginInfo') || '');
   }
 
   ngOnInit(): void {
+    this.notificationHoder$ = this.notiSrv.countHolder$;
   }
 
   submitMyform() {

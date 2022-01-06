@@ -1,5 +1,5 @@
 <div class="topnav">
-  <a routerLink="/home" routerLinkActive="active">Home</a>
+  <a routerLink="/" routerLinkActive="active">Home</a>
   <a routerLink="/dashboard">Dashboard</a>
   <a routerLink="/login">Login</a>
   <a routerLink="/register">Register</a>
@@ -22,5 +22,9 @@
       </button>
     </mat-menu>
   </a> -->
+</div>
+
+<div>
+ Latest Count in application {{notificationHoder$ | async }}
 </div>
 <!-- {{locations | json}} -->
