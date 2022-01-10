@@ -34,6 +34,8 @@ import { DemoPipe } from './pipes/demo.pipe';
 import { AvatarPipe } from './pipes/avatar.pipe';
 import { TruncatePipe } from './pipes/truncate.pipe';
 import { NotificationManagerComponent } from './notification-manager/notification-manager.component';
+import { EmailTemplatesComponent } from './email-templates/email-templates.component';
+import { UsersComponent } from './users/users.component';
 
 
 const appRoutes: Routes = [
@@ -52,6 +54,14 @@ const appRoutes: Routes = [
   {
     path: 'ticket',
     component: SupportTicketComponent
+  },
+  {
+    path: 'templates',
+    component: EmailTemplatesComponent
+  },
+  {
+    path: 'users',
+    component: UsersComponent
   },
   {
     path: '',
@@ -89,7 +99,9 @@ const appRoutes: Routes = [
     DemoPipe,
     AvatarPipe,
     TruncatePipe,
-    NotificationManagerComponent
+    NotificationManagerComponent,
+    EmailTemplatesComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,

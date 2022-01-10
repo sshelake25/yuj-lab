@@ -1,0 +1,11 @@
+<p>email-templates works!</p>
+<div *ngIf="myTemplate$ | async as myTemplates">
+
+    <ul>
+        <li *ngFor="let tmpl of myTemplates">
+            <span>{{tmpl.template_id}}</span>
+            <img [src]="tmpl.imagekit_thumb_url" width="100" height="100">
+            <!-- {{tmpl | json}} -->
+        </li>
+    </ul>
+</div>
