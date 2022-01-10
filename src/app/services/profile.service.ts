@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,7 +6,12 @@ import { Injectable } from '@angular/core';
 })
 export class ProfileService {
    name = 'YUJ desing';
-  constructor() { }
+
+  constructor(private myhttp: HttpClient) { }
+
+  getAllUser() {
+    return this.myhttp.get('/api/user');
+  }
  
 
 }

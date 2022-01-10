@@ -1,4 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { first, Observable } from 'rxjs';
+import { ProfileService } from '../services/profile.service';
+
+// interface person {
+//   last_name: string,
+//   password: string,
+//   username: string
+// }
 
 @Component({
   selector: 'yuj-users',
@@ -7,9 +15,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersComponent implements OnInit {
 
-  constructor() { }
+  allUser$: Observable<any> = this.myProfileSrv.getAllUser().pipe();
+
+  constructor(private myProfileSrv: ProfileService) { }
 
   ngOnInit(): void {
+
   }
 
 }

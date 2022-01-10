@@ -1,1 +1,9 @@
 <p>users works!</p>
+<mat-list role="list" *ngIf="(allUser$ | async) as usersList">
+
+
+    <mat-list-item role="listitem" *ngFor="let user of usersList; let i = index">
+        {{i + 1}} - {{user.username }} - {{ user. email}}
+    </mat-list-item>
+
+</mat-list>
