@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ConfigService } from '../services/config.service';
+import { ProfileService } from '../services/profile.service';
 
 @Component({
   selector: 'yuj-login',
@@ -14,7 +15,9 @@ export class LoginComponent implements OnInit {
   loginForm: any;
 
 
-  constructor(private config: ConfigService) {
+  constructor(
+    private config: ConfigService,
+    private profile: ProfileService) {
     console.log(`new - data is ${this.data}`);
   }
 
@@ -32,61 +35,55 @@ export class LoginComponent implements OnInit {
         Validators.minLength(6)
       ]),
       passw: new FormControl("", Validators.required)
-    })
-
-
+    });
   }
 
   onSubmitLoginForm() {
-    console.log(this.loginForm.value)
-   
-    //JSON.parse 
 
-    localStorage.setItem('loginInfo',  JSON.stringify(this.loginForm.value))
-    
-    localStorage.setItem('fillterSession',  JSON.stringify({
-      person: 'sshelake'
-    }))
-    
-    
+    if (this.loginForm.valid) {
+      this.profile
+        .loginUser(this.loginForm.value)
+        .subscribe(data => {
+          //imple logic for allowing user inside sysm
+        });
 
-    
-    // localStorage.clear()
-    // this.loginService.loginUser(this.loginForm.value).subcribe(
-    //   (repose) => {
+    }
 
-    //   }
-    // )
+    // localStorage.setItem('loginInfo', JSON.stringify(this.loginForm.value))
+
+    // localStorage.setItem('fillterSession', JSON.stringify({
+    //   person: 'sshelake'
+    // }))
 
   }
 
   submitMyform() {
-    alert('ss')
+    // alert('ss')
   }
 
-  ngDoCheck() {
-    console.log("ngDoCheck");
-  }
+  // ngDoCheck() {
+  //   console.log("ngDoCheck");
+  // }
 
-  ngAfterContentInit() {
-    console.log("ngAfterContentInit");
-  }
+  // ngAfterContentInit() {
+  //   console.log("ngAfterContentInit");
+  // }
 
-  ngAfterContentChecked() {
-    console.log("ngAfterContentChecked");
-  }
+  // ngAfterContentChecked() {
+  //   console.log("ngAfterContentChecked");
+  // }
 
-  ngAfterViewInit() {
-    console.log("ngAfterViewInit");
-  }
+  // ngAfterViewInit() {
+  //   console.log("ngAfterViewInit");
+  // }
 
-  ngAfterViewChecked() {
-    console.log("ngAfterViewChecked");
-  }
+  // ngAfterViewChecked() {
+  //   console.log("ngAfterViewChecked");
+  // }
 
-  ngOnDestroy() {
-    console.log("ngOnDestroy");
-  }
+  // ngOnDestroy() {
+  //   console.log("ngOnDestroy");
+  // }
 
 
 
