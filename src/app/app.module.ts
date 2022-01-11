@@ -38,6 +38,7 @@ import { EmailTemplatesComponent } from './email-templates/email-templates.compo
 import { UsersComponent } from './users/users.component';
 import { DemoInterceptor } from './interceptors/demo.interceptor';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 
 
@@ -130,9 +131,12 @@ const appRoutes: Routes = [
       useClass: JwtInterceptor,
       multi: true
     },
-    
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
   
-
   ],
   bootstrap: [AppComponent]
 })
