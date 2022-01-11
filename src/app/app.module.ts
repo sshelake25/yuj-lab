@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
@@ -36,6 +36,9 @@ import { TruncatePipe } from './pipes/truncate.pipe';
 import { NotificationManagerComponent } from './notification-manager/notification-manager.component';
 import { EmailTemplatesComponent } from './email-templates/email-templates.component';
 import { UsersComponent } from './users/users.component';
+import { DemoInterceptor } from './interceptors/demo.interceptor';
+import { JwtInterceptor } from './interceptors/jwt.interceptor';
+
 
 
 const appRoutes: Routes = [
@@ -116,7 +119,20 @@ const appRoutes: Routes = [
     MaterialModule,
   ],
   providers: [
-    ProductService
+    ProductService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: DemoInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true
+    },
+    
+  
+
   ],
   bootstrap: [AppComponent]
 })
