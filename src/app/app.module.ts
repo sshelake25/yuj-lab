@@ -39,43 +39,7 @@ import { UsersComponent } from './users/users.component';
 import { DemoInterceptor } from './interceptors/demo.interceptor';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
-
-
-
-const appRoutes: Routes = [
-  {
-    path: 'dashboard',
-    component: DashboardComponent
-  },
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'register',
-    component: RegistrationComponent
-  },
-  {
-    path: 'ticket',
-    component: SupportTicketComponent
-  },
-  {
-    path: 'templates',
-    component: EmailTemplatesComponent
-  },
-  {
-    path: 'users',
-    component: UsersComponent
-  },
-  {
-    path: '',
-    component: HomeComponent
-  },
-  {
-    path: '**',
-    component: NotfoundComponent
-  }
-];
+import { MainRoutingModule } from './main-routing.module';
 
 
 @NgModule({
@@ -109,10 +73,11 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(
-      appRoutes,
-      // { enableTracing: true } // <-- debugging purposes only
-    ),
+    // RouterModule.forRoot(
+    //   appRoutes,
+    //   // { enableTracing: true } // <-- debugging purposes only
+    // ),
+    MainRoutingModule,
     HttpClientModule,
     ReactiveFormsModule, //for reactive form to use
     FormsModule,
