@@ -40,7 +40,8 @@ import { DemoInterceptor } from './interceptors/demo.interceptor';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { MainRoutingModule } from './main-routing.module';
-import { AdminPanelModule } from './admin-panel/admin-panel.module';
+import { SharedModule } from './modules/shared/shared.module';
+
 
 
 @NgModule({
@@ -84,7 +85,8 @@ import { AdminPanelModule } from './admin-panel/admin-panel.module';
     FormsModule,
     BrowserAnimationsModule, //tempdrive form,
     MaterialModule,
-    //AdminPanelModule // should have to remove if want to load as lazy loaded module
+    //AdminPanelModule // should have to remove if want to load as lazy loaded module,
+    SharedModule
   ],
   providers: [
     ProductService,

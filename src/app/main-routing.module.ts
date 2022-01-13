@@ -41,7 +41,7 @@ const appRoutes: Routes = [
   {
     path: 'users',
     component: UsersComponent,
-    canActivate: [AuthGuard]
+    // canActivate: [AuthGuard]
   },
   {
     path: '',
@@ -49,12 +49,12 @@ const appRoutes: Routes = [
   },
   {
     path: 'support-panel',
-    loadChildren: () => import('./support-panel/support-panel.module')
+    loadChildren: () => import('./modules/support-panel/support-panel.module')
       .then(m => m.SupportPanelModule)
   },
   {
     path: 'admin-panel',
-    loadChildren: () => import('./admin-panel/admin-panel.module').then(data => data.AdminPanelModule)
+    loadChildren: () => import('./modules/admin-panel/admin-panel.module').then(data => data.AdminPanelModule)
   },
   {
     path: '**',
