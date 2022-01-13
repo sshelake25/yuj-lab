@@ -84,7 +84,7 @@ import { AdminPanelModule } from './admin-panel/admin-panel.module';
     FormsModule,
     BrowserAnimationsModule, //tempdrive form,
     MaterialModule,
-    AdminPanelModule
+    //AdminPanelModule // should have to remove if want to load as lazy loaded module
   ],
   providers: [
     ProductService,

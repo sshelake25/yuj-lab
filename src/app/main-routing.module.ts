@@ -53,6 +53,10 @@ const appRoutes: Routes = [
       .then(m => m.SupportPanelModule)
   },
   {
+    path: 'admin-panel',
+    loadChildren: () => import('./admin-panel/admin-panel.module').then(data => data.AdminPanelModule)
+  },
+  {
     path: '**',
     component: NotfoundComponent
   }
