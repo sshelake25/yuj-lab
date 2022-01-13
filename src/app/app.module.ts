@@ -40,6 +40,7 @@ import { DemoInterceptor } from './interceptors/demo.interceptor';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { MainRoutingModule } from './main-routing.module';
+import { AdminPanelModule } from './admin-panel/admin-panel.module';
 
 
 @NgModule({
@@ -83,6 +84,7 @@ import { MainRoutingModule } from './main-routing.module';
     FormsModule,
     BrowserAnimationsModule, //tempdrive form,
     MaterialModule,
+    AdminPanelModule
   ],
   providers: [
     ProductService,

@@ -48,6 +48,11 @@ const appRoutes: Routes = [
     component: HomeComponent
   },
   {
+    path: 'support-panel',
+    loadChildren: () => import('./support-panel/support-panel.module')
+      .then(m => m.SupportPanelModule)
+  },
+  {
     path: '**',
     component: NotfoundComponent
   }
