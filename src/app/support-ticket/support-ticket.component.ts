@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
@@ -32,13 +33,16 @@ export class SupportTicketComponent implements OnInit {
   ]
   notificationHoder$: any;
 
-  constructor(public dialog: MatDialog, 
+  constructor(
+    private http: HttpClient,
+    public dialog: MatDialog, 
     private notiSrv: NotificationsServiceService) {
     this.myLoginData = JSON.parse(localStorage.getItem('loginInfo') || '');
   }
 
   ngOnInit(): void {
     this.notificationHoder$ = this.notiSrv.countHolder$;
+  
   }
 
   submitMyform() {

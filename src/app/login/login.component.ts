@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { DialogService } from '../modules/shared/services/dialog.service';
 import { ConfigService } from '../services/config.service';
 import { ProfileService } from '../services/profile.service';
 
@@ -18,6 +19,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private config: ConfigService,
     private profile: ProfileService) {
+
     console.log(`new - data is ${this.data}`);
   }
 
@@ -26,6 +28,9 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() { //once 
+    //
+    // this.yujDialog.openLoadingDialog();
+
     console.log(`ngOnInit  - data is ${this.data}`);
 
     this.loginForm = new FormGroup({

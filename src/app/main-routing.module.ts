@@ -32,7 +32,7 @@ const appRoutes: Routes = [
   {
     path: 'ticket',
     component: SupportTicketComponent,
-    canActivate: [AuthGuard]
+    // canActivate: [AuthGuard]
   },
   {
     path: 'templates',
