@@ -41,6 +41,7 @@ import { JwtInterceptor } from './interceptors/jwt.interceptor';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { MainRoutingModule } from './main-routing.module';
 import { SharedModule } from './modules/shared/shared.module';
+import { UserDetailsComponent } from './users/user-details/user-details.component';
 
 
 
@@ -71,7 +72,8 @@ import { SharedModule } from './modules/shared/shared.module';
     TruncatePipe,
     NotificationManagerComponent,
     EmailTemplatesComponent,
-    UsersComponent
+    UsersComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,
