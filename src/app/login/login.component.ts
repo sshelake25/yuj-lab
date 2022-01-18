@@ -1,8 +1,10 @@
 import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { DialogService } from '../modules/shared/services/dialog.service';
 import { ConfigService } from '../services/config.service';
 import { ProfileService } from '../services/profile.service';
+import { StorageService } from '../services/storage.service';
 
 @Component({
   selector: 'yuj-login',
@@ -15,29 +17,38 @@ export class LoginComponent implements OnInit {
 
   loginForm: any;
 
+  isLoggedIn = false;
+  isLoginFailed = false;
+  errorMessage = '';
+  roles: string[] = [];
 
   constructor(
+    private router: Router,
     private config: ConfigService,
-    private profile: ProfileService) {
+    private profile: ProfileService,
+    private storageSrv: StorageService) {
 
     console.log(`new - data is ${this.data}`);
   }
 
-  ngOnChanges() {
-    console.log(`ngOnChanges - data is ${this.data}`);
-  }
+  // ngOnChanges() {
+  //   console.log(`ngOnChanges - data is ${this.data}`);
+  // }
 
   ngOnInit() { //once 
     //
     // this.yujDialog.openLoadingDialog();
-
+    if (this.storageSrv.getToken()) {
+      this.isLoggedIn = true;
+      this.roles = this.storageSrv.getUser().roles;
+    }
     console.log(`ngOnInit  - data is ${this.data}`);
 
     this.loginForm = new FormGroup({
       uname: new FormControl("", [
         Validators.required,
         Validators.pattern('[a-zA-Z]+'),
-        Validators.minLength(6)
+        Validators.minLength(2)
       ]),
       passw: new FormControl("", Validators.required)
     });
@@ -48,9 +59,24 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.valid) {
       this.profile
         .loginUser(this.loginForm.value)
-        .subscribe(data => {
-          //imple logic for allowing user inside sysm
-        });
+        .subscribe(
+          {
+            next: (data: any) => {
+              this.storageSrv.saveToken(data.token);
+              // this.storageSrv.saveRefreshToken(data.refreshToken);
+              this.storageSrv.saveUser(data);
+
+              this.isLoginFailed = false;
+              this.isLoggedIn = true;
+              this.router.navigateByUrl('/');
+              // this.reloadPage();
+            },
+            error: (e) => {
+              console.error(e)
+            },
+            complete: () => { console.log('request completed') }
+          }
+        );
 
     }
 
@@ -60,6 +86,10 @@ export class LoginComponent implements OnInit {
     //   person: 'sshelake'
     // }))
 
+  }
+
+  reloadPage(): void {
+    window.location.reload();
   }
 
   submitMyform() {

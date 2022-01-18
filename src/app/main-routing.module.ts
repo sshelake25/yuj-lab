@@ -36,20 +36,20 @@ const appRoutes: Routes = [
   {
     path: 'ticket',
     component: SupportTicketComponent,
-    // canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   },
 
   {
 
     path: 'templates',
     component: EmailTemplatesComponent,
-    // outlet: 'sidebar'
+    canActivate: [AuthGuard],
   },
 
   {
     path: 'users', // user/details has to provider place to added view of child
     component: UsersComponent, // in .html of this <router-outlet>
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     children: [
       {
         path: 'details/:myIdentifier',
@@ -63,7 +63,8 @@ const appRoutes: Routes = [
   },
   {
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'support-panel',
@@ -73,10 +74,12 @@ const appRoutes: Routes = [
     resolve: {
       allUserFromResolve: DataFetchService,
       // anothoerData : Ano
-    }
+    },
+    canActivate: [AuthGuard],
   },
   {
     path: 'admin-panel',
+    canActivate: [AuthGuard],
     loadChildren: () => import('./modules/admin-panel/admin-panel.module').then(data => data.AdminPanelModule)
   },
   {

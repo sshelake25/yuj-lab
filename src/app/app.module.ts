@@ -94,19 +94,14 @@ import { UserDetailsComponent } from './users/user-details/user-details.componen
     ProductService,
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: DemoInterceptor,
-      multi: true
-    },
-    {
-      provide: HTTP_INTERCEPTORS,
       useClass: JwtInterceptor,
       multi: true
-    },
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptor,
-      multi: true
     }
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: AuthInterceptor,
+    //   multi: true
+    // }
   
   ],
   bootstrap: [AppComponent]
