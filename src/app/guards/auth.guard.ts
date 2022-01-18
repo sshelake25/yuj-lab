@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
+import { DialogService } from '../modules/shared/services/dialog.service';
 import { StorageService } from '../services/storage.service';
 
 export interface GuideUser {
@@ -15,7 +16,8 @@ export class AuthGuard implements CanActivate, GuideUser {
 
   constructor(
     private router: Router,
-    private storageSrv: StorageService) {
+    private storageSrv: StorageService,
+    private youjDialog: DialogService) {
   }
 
   canActivate(
@@ -25,6 +27,8 @@ export class AuthGuard implements CanActivate, GuideUser {
     console.log(route)
 
     if (!this.storageSrv.getToken()) {
+      this.youjDialog.openInfoMessage("Your token go invalid")
+
       this.router.navigate(['/login']);
       return false;
     }

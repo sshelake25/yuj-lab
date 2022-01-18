@@ -11,12 +11,14 @@ import {
 import { catchError, Observable, of, throwError } from 'rxjs';
 import { Router } from '@angular/router';
 import { StorageService } from '../services/storage.service';
+import { DialogService } from '../modules/shared/services/dialog.service';
 
 @Injectable()
 export class JwtInterceptor implements HttpInterceptor {
 
   constructor(private router: Router,
-    private storageSrv: StorageService) { }
+    private storageSrv: StorageService,
+    private youjDialog: DialogService) { }
 
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
@@ -26,6 +28,8 @@ export class JwtInterceptor implements HttpInterceptor {
     return next.handle(modifiedReq).pipe(
       catchError(err => {
         if (err.status === 401 || err.status === 403) { //
+          this.youjDialog.openInfoMessage("Your token go invalid")
+
           //navigate /delete cookies or whatever
           this.storageSrv.signOut();
           this.router.navigateByUrl(`/login`);

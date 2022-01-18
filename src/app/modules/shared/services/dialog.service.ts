@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ErrorDialogComponent } from '../error-dialog/error-dialog.component';
 import { LoadingDialogComponent } from '../loading-dialog/loading-dialog.component';
 
@@ -14,7 +15,9 @@ export class DialogService {
 
   private dialogRefError!: MatDialogRef<ErrorDialogComponent>;
 
-  constructor(private matDialog: MatDialog) { }
+  constructor(
+    private matDialog: MatDialog,
+    private matSnackBar: MatSnackBar) { }
 
   openErrorDialog(message: string, status?: number) {
     if (!this.opened)
@@ -51,5 +54,16 @@ export class DialogService {
 
   hideLoadingDialog() {
     this.matDialog.closeAll();
+  }
+
+  openInfoMessage(message: string) {
+    this.matSnackBar.open(
+      message,
+      'close',
+      {
+        horizontalPosition: 'center',
+        verticalPosition: 'top',
+      }
+    )
   }
 }
